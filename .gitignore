@@ -1,0 +1,11 @@
+_site
+*.gem
+.project
+.idea
+*.iml
+
+# don't lock versions for gem files, as this contains preceision that the gem commend does not
+Gemfile.lock
+
+
+
