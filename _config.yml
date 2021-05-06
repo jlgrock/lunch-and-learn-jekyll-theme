@@ -7,7 +7,7 @@ url: "Your-Link.github.io" # the base hostname & protocol for your site
 # Build settings
 logo: "/img/icon-large.png"
 
-include: ['_plugins', 'about.html']
+include: ['_plugins']
 
 collections:
   speakers:
