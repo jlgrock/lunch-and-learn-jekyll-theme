@@ -4,7 +4,7 @@
         <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
         <meta name="viewport" content="width=device-width">
         <meta name="description" content="{{ site.description }}">
-        <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+        <link rel="canonical" href="/">
 
         {% seo %}
 
@@ -24,8 +24,22 @@
 
         <!-- Common Stylesheets -->
         <!-- Custom CSS & Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
-        <link rel="stylesheet" href="{{ "assets/css/bootstrap.min.css" | prepend: site.baseurl }}">
-        <link rel="stylesheet" href="{{ "assets/css/agency.css" | prepend: site.baseurl }}">
+        <link rel="stylesheet" href="{{ "/assets/css/bootstrap.min.css" }}">
+        <link rel="stylesheet" href="{{ "/assets/css/agency.css" }}">
+
+        <!-- jQuery Version 1.11.0 -->
+        <script src="{{ "/assets/js/jquery-1.11.0.js" }}"></script>
+
+        <!-- Bootstrap Core JavaScript -->
+        <script src="{{ "/assets/js/bootstrap.min.js" }}"></script>
+
+        <!-- Plugin JavaScript -->
+        <script src="{{ "/assets/js/jquery.easing.min.js" }}"></script>
+        <script src="{{ "/assets/js/classie.js" }}"></script>
+        <script src="{{ "/assets/js/cbpAnimatedHeader.js" }}"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="{{ "/assets/js/agency.js" }}"></script>
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

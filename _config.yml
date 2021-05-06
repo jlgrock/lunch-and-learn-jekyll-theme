@@ -7,7 +7,13 @@ url: "Your-Link.github.io" # the base hostname & protocol for your site
 # Build settings
 logo: "/img/icon-large.png"
 
-include: ['_plugins', '_topics', '_speakers']
+include: ['_plugins']
+
+collections:
+  speakers:
+    sort_by: username
+  topics:
+
 
 plugins:
   - jekyll-sitemap
@@ -19,3 +25,5 @@ permalink: pretty
 
 sass:
   sass_dir: _sass
+  style: compressed
+
