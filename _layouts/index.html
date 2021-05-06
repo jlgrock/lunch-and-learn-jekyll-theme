@@ -47,9 +47,10 @@ layout: default
                     {% if topic.speakers %}
                         {% assign speaker_usernames = topic.speakers | split: "," %}
                         {% for speaker_username in speaker_usernames %}
+                            {% assign speaker_username_stripped = speaker_username | strip %}
                             {% for speaker in site.speakers %}
                                 {% unless speaker.example %}
-                                    {% if speaker_username == speaker.username %}
+                                    {% if speaker_username_stripped == speaker.username %}
                                         <div class="col-md-4 col-sm-6 speakers-item">
                                             <a href="#{{ speaker.username }}" class="speakers-link" data-toggle="modal">
                                                 <div class="speakers-hover">
@@ -94,9 +95,10 @@ layout: default
         {% if topic.speakers %}
             {% assign speaker_usernames = topic.speakers | split: "," %}
             {% for speaker_username in speaker_usernames %}
+                {% assign speaker_username_stripped = speaker_username | strip %}
                 {% for speaker in site.speakers %}
                     {% unless speaker.example %}
-                        {% if speaker_username == speaker.username %}
+                        {% if speaker_username_stripped == speaker.username %}
                             <div class="portfolio-modal modal fade" id="{{ speaker.username }}" tabindex="-1" role="dialog" aria-hidden="true">
                                 <div class="modal-content">
                                     <div class="close-modal" data-dismiss="modal">
