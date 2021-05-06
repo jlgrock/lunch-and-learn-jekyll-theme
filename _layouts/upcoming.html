@@ -5,17 +5,36 @@ title: Upcoming Topics
 ---
 {% assign today_date = 'now' | date: '%s' %}
 
-{% include navigation.html static_navigation="upcoming" %}
-<br><br><br>
 <body id="page-top" class="index">
-{% for topic in site.topics %}
-    {% assign topic_date = topic.date | date: '%s' %}
-    {% if topic_date <= today_date %}
-        <div class="topic">
-            <h2>{{ topic.title }}</h2>
-            <div>Presenters: {{ topic.speakers }}</div>
-            <div>{{ topic.content | truncate: 1200 }}</div>
+{% include navigation.html static_navigation="upcoming" %}
+
+    <section id="topics">
+    {% for topic in site.topics %}
+        {% assign topic_date = topic.date | date: '%s' %}
+        {% if topic_date <= today_date %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 text-left"></div>
+                <div class="col-md-8 text-left rounded border border-primary">
+                    <div><h2>{{ topic.title }}</h2></div>
+                    <div>Presenters: {{ topic.speakers }}</div>
+                    <div>{{ topic.content | truncate: 1200 }}</div>
+                </div>
+            </div>
         </div>
-    {% endif %}
-{% endfor %}
+        {% assign has_content = true %}
+        {% endif %}
+    {% endfor %}
+    {% unless has_content %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2 text-left"></div>
+                <div class="col-md-8 text-left">
+                    <div><h2>There are currently no upcoming Topics scheduled.</h2></div>
+                </div>
+                <div class="col-md-2 text-left"></div>
+            </div>
+        </div>
+    {% endunless %}
+    </section>
 </body>
