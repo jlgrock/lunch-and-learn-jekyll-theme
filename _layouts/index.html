@@ -2,13 +2,12 @@
 layout: default
 ---
 <body id="page-top" class="index">
-{% assign today_date = 'now' | date: '%s' %}
+{% assign today_date = 'now' | date: '%s' | plus: 0 %}
 today_date: {{ today_date }}
 
 {% for topic in site.topics %}
     {% unless topic.example %}
-        {% assign topic_date = topic.date | date: '%s' %}
-        {% assign topic_date | plus: 0 %}
+        {% assign topic_date = topic.date | date: '%s' | plus: 0 %}
         topic_date: {{ topic_date }} >= {{ today_date }}
         {% if topic_date >= today_date %}
             next check...
