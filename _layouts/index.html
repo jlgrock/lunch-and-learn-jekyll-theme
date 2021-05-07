@@ -11,9 +11,11 @@ layout: default
             {% if next %}
                 {% if topic_date <= next %}
                     {% assign next = topic_date %}
+                    next = {{ next }}
                 {% endif %}
             {% else %}
                 {% assign next = topic_date %}
+                el next = {{ next }}
             {% endif %}
         {% endif %}
     {% endunless %}
