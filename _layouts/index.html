@@ -22,6 +22,7 @@ layout: default
 {% include navigation.html %}
 {% for topic in site.topics %}
     {% assign topic_date = topic.date | date: '%s' %}
+    {{ topic_date }}
     {% if topic_date == next %}
         <header>
             <div class="container">
