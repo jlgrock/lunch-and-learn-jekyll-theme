@@ -3,7 +3,7 @@ layout: default
 permalink: upcoming.html
 title: Upcoming Topics
 ---
-{% assign previous_topics = site.topics | where_exp:"topic", "topic.date < site.time" %}
+{% assign previous_topics = site.topics | where_exp:"topic", "topic.date >= site.time" %}
 
 <body id="page-top" class="index">
 {% include navigation.html static_navigation="upcoming" %}
