@@ -24,6 +24,8 @@ layout: default
 
 <!-- Header -->
 {% include navigation.html %}
+
+topics: {{ site.topics }}
 {% for topic in site.topics %}
     {% assign topic_date = topic.date | date: '%s' %}
     compare: {{ topic_date }} | {{ next }}
