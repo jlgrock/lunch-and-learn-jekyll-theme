@@ -2,9 +2,9 @@
 layout: default
 ---
 <body id="page-top" class="index">
-{% assign today_date = 'now' | date: '%s' | plus: 0 %}
+{% assign today_date = 'now' | date: '%s' | minus: site.timezone_adjustment %}
 today_date: {{ today_date }}
-site_time: {{ site.time }}
+site_time: {{ site.time | date: '%s' | plus: 0 }}
 
 {% for topic in site.topics %}
     {% unless topic.example %}

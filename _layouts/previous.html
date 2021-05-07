@@ -3,7 +3,7 @@ layout: default
 permalink: previous.html
 title: Previous Topics
 ---
-{% assign today_date = 'now' | date: '%s' %}
+{% assign today_date = 'now' | date: '%s' | minus site.timezone_adjustment %}
 
 <body id="page-top" class="index">
 {% include navigation.html static_navigation="previous" %}
