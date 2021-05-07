@@ -5,16 +5,18 @@ layout: default
 {% assign today_date = 'now' | date: '%s' %}
 
 {% for topic in site.topics %}
-    {% assign topic_date = topic.date | date: '%s' %}
-    {% if topic_date >= today_date %}
-        {% if next %}
-            {% if topic_date <= next %}
+    {% unless topic.example %}
+        {% assign topic_date = topic.date | date: '%s' %}
+        {% if topic_date >= today_date %}
+            {% if next %}
+                {% if topic_date <= next %}
+                    {% assign next = topic_date %}
+                {% endif %}
+            {% else %}
                 {% assign next = topic_date %}
             {% endif %}
-        {% else %}
-            {% assign next = topic_date %}
         {% endif %}
-    {% endif %}
+    {% endunless %}
 {% endfor %}
 
 <body id="page-top" class="index">
@@ -22,7 +24,6 @@ layout: default
 {% include navigation.html %}
 {% for topic in site.topics %}
     {% assign topic_date = topic.date | date: '%s' %}
-    {{ topic_date }} | {{ next }}
     {% if topic_date == next %}
         <header>
             <div class="container">
