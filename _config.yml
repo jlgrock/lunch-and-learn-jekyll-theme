@@ -9,9 +9,6 @@ organization_url: https://www.myorg.com
 support_team: This Team
 support_team_email: ouremail@example.com
 
-#this amount different from GMT, so use this to determine current time
-timezone_adjustment: 18000
-
 # Build settings
 logo: "/img/icon-large.png"
 
