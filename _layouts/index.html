@@ -8,8 +8,8 @@ layout: default
     {% assign topic_date = topic.date | date: '%s' %}
     {% if topic_date >= today_date %}
         {% if next %}
-            {% if topic_date < next %}
-            {% assign next = topic_date %}
+            {% if topic_date <= next %}
+                {% assign next = topic_date %}
             {% endif %}
         {% else %}
             {% assign next = topic_date %}
@@ -22,7 +22,7 @@ layout: default
 {% include navigation.html %}
 {% for topic in site.topics %}
     {% assign topic_date = topic.date | date: '%s' %}
-    {{ topic_date }}
+    {{ topic_date }} | {{ next }}
     {% if topic_date == next %}
         <header>
             <div class="container">
