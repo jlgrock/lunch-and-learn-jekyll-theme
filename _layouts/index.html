@@ -9,6 +9,7 @@ today_date: {{ today_date }}
     {% unless topic.example %}
         {% assign topic_date = topic.date | date: '%s' | plus: 0 %}
         topic_date: {{ topic_date }} >= {{ today_date }}
+        topic_date2: {{ topic_date >= today_date }}
         {% if topic_date >= today_date %}
             next check...
             {% if next %}
