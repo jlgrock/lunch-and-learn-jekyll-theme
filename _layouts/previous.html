@@ -3,14 +3,14 @@ layout: default
 permalink: previous.html
 title: Previous Topics
 ---
-{% assign today_date = 'now' | date: '%s' | minus site.timezone_adjustment %}
+{% assign today_date = site.time | date: '%s' | minus: site.timezone_adjustment %}
 
 <body id="page-top" class="index">
 {% include navigation.html static_navigation="previous" %}
 
 <section id="topics">
     {% for topic in site.topics %}
-    {% assign topic_date = topic.date | date: '%s' %}
+    {% assign topic_date = topic.date | date: '%s' | plus: 0 %}
     {% if topic_date > today_date %}
     <div class="container">
         <div class="row">
